@@ -13,6 +13,9 @@
 [submodule "docs"]
 	path = docs
 	url = git://github.com/fuel/docs.git
+[submodule "fuel/packages/kohana-orm"]
+	path = fuel/packages/kohana-orm
+	url = git://github.com/TJS-Technology/fuel-kohana-orm.git
 [submodule "fuel/packages/spark"]
 	path = fuel/packages/spark
-	url = git@github.com:bencorlett/Spark.git
+	url = git://github.com/bencorlett/Spark.git

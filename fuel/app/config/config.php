@@ -30,7 +30,7 @@ return array(
 	 *
 	 * Set this to false or remove if you using mod_rewrite.
 	 */
-	'index_file'	=> 'index.php',
+	'index_file'	=> false,
 
 	/**
 	 * Your environment.  Can be set to any of the following:
@@ -156,7 +156,7 @@ return array(
 	 *      array(APPPATH.'modules'.DS)
 	 */
 	'module_paths' => array(
-		//APPPATH.'modules'.DS
+		// APPPATH.'modules'.DS
 	),
 
 
@@ -178,7 +178,8 @@ return array(
 		 * );
 		 */
 		'packages'	=> array(
-			//'orm',
+			// 'orm',
+			'spark',
 		),
 
 		/**

@@ -17,9 +17,9 @@ return array(
 		'type'			=> 'mysql',
 		'connection'	=> array(
 			'hostname'   => 'localhost',
-			'database'   => 'fuel_dev',
+			'database'   => 'spark_demo',
 			'username'   => 'root',
-			'password'   => '',
+			'password'   => 'root',
 			'persistent' => false,
 		),
 		'table_prefix' => '',

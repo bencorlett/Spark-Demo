@@ -156,7 +156,7 @@ return array(
 	 *      array(APPPATH.'modules'.DS)
 	 */
 	'module_paths' => array(
-		// APPPATH.'modules'.DS
+		APPPATH.'modules'.DS
 	),
 
 
@@ -190,7 +190,9 @@ return array(
 		 *
 		 * A path must be set in module_paths for this to work.
 		 */
-		'modules'	=> array(),
+		'modules'	=> array(
+			'grid',
+		),
 
 		/**
 		 * Classes to autoload & initialize even when not used

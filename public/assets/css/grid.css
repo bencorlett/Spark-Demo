@@ -1,0 +1,157 @@
+/**
+ * Spark Fuel Package By Ben Corlett
+ * 
+ * Spark - Set your fuel on fire!
+ * 
+ * The Spark Fuel Package is an open-source
+ * fuel package consisting of several 'widgets'
+ * engineered to make developing various
+ * web-based systems easier and quicker.
+ * 
+ * @package    Fuel
+ * @subpackage Spark
+ * @version    1.0
+ * @author     Ben Corlett (http://www.bencorlett.com)
+ * @license    MIT License
+ * @copyright  (c) 2011 Ben Corlett
+ * @link       http://spark.bencorlett.com
+ */
+
+/* === Core ================= */
+
+div.grid > table {
+	width: 100%;
+	border-spacing: 0;
+}
+
+div.grid > table.controls {
+	margin: 0 0 5px;
+}
+
+div.grid > table.grid {
+	margin: 0 0 20px;
+}
+
+div.grid input,
+div.grid select {
+	margin: 0;
+	outline: none;
+}
+
+div.grid input {
+	padding: 2px;
+	border: 1px solid #ddd;
+}
+
+/* =/= Core ================= */
+
+/* === Controls ============= */
+
+div.grid > table.controls td.pager > span.separator {
+	margin: 0 5px;
+}
+
+div.grid > table.controls td.filter-actions {
+	text-align: right;
+}
+
+/* =/= Controls ============= */
+
+
+
+
+/* === Headers ============== */
+
+div.grid > table.grid > thead > tr.headers > th {
+	background: #5d594c;
+	padding: 5px;
+	color: #f8f7f3;
+}
+
+div.grid > table.grid > thead > tr.headers > th > span {
+	cursor: pointer;
+}
+
+/* =/= Headers ============== */
+
+
+
+
+/* === Filters ============== */
+
+div.grid > table.grid > thead > tr.filters > th {
+	padding: 5px;
+	background: #222021;
+	vertical-align: top;
+	font-size: 12px;
+	text-shadow: 0 -1px 0 #666;
+	color: #fff;
+}
+
+/* Ranges */
+div.grid > table.grid > thead > tr.filters > th > div.range > div.line {
+	width: 100px;
+}
+
+div.grid > table.grid > thead > tr.filters > th > div.range > div.line.min {
+	margin-bottom: 4px;
+}
+
+div.grid > table.grid > thead > tr.filters > th > div.range > div.line > label,
+div.grid > table.grid > thead > tr.filters > th > div.range > div.line > input {
+	float: left;
+	text-align: left;
+}
+
+div.grid > table.grid > thead > tr.filters > th > div.range > div.line > label {
+	width: 40px;
+}
+
+div.grid > table.grid > thead > tr.filters > th > div.range > div.line > input {
+	width: 50px !important;
+}
+
+/* Standard */
+div.grid > table.grid > thead > tr.filters > th > div > input,
+div.grid > table.grid > thead > tr.filters > th > div > select {
+	width: 95%;
+}
+
+/* =/= Filters ============== */
+
+
+
+
+/* === Cells ================ */
+
+div.grid > table.grid > tbody > tr > td {
+	padding: 2px 5px;
+}
+
+div.grid > table.grid > tbody > tr.even > td {
+	background: #eeefe3;
+}
+
+div.grid > table.grid > tbody > tr:hover > td {
+	background-color: #e9ebcf;
+}
+
+/* =/= Cells ================ */
+
+
+
+
+/* === Clears ============== */
+
+div.grid > table.grid > thead > tr.filters > th > div.range:after,
+div.grid > table.grid > thead > tr.filters > th > div.range > div.line:after {
+	display: block;
+	content: ".";
+	clear: both;
+	font-size: 0;
+	line-height: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+/* =/= Clears ============== */

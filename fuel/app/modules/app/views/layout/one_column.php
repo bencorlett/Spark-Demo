@@ -18,11 +18,5 @@
  * @link       http://spark.bencorlett.com
  */
 namespace App;
-
-class Controller_Test extends Controller_Template {
-	
-	public function action_index()
-	{
-		
-	}
-}
+?>
+<?=isset($content) ? $content : null?>

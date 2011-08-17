@@ -60,9 +60,12 @@ $query = \DB::select('*')
 		This website is running on the development branch of Spark - it's a complete rewrite with performance and consistency in focus, but it's incomplete thus far. It currently doesn't support joining tables (the master branch does), however I will add this functionality in the coming days. There are also many more components to the Spark Fuel Package, present in the master branch, but not in the development branch.
 	</p>
 	<h4>Any questions? Improvements? Bugs? Pull requests? Want to say hi?</h4>
+	<h4>Any questions? Improvements? Bugs? Pull requests? Want to say hi?</h4>
 	<p style="text-align: center;">
 		I'd love to hear from you. Really
 		<br />
 		<?=\Html::anchor('http://www.twitter.com/ben_corlett', '@ben_corlett')?><span style="margin: 0 20px;">|</span><?=\Html::mail_to_safe('bencorlett@me.com', 'bencorlett@me.com')?>
+		<br />
+		irc.freenode.net - bencorlett
 	</p>
 </div>

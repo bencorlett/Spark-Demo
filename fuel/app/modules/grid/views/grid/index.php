@@ -69,6 +69,6 @@ $query = \DB::select('*')
 		<br />
 		<?=\Html::anchor('http://www.twitter.com/ben_corlett', '@ben_corlett')?><span style="margin: 0 20px;">|</span><?=\Html::mail_to_safe('bencorlett@me.com', 'bencorlett@me.com')?>
 		<br />
-		irc.freenode.net - bencorlett
+		irc.freenode.net - #fuelphp - bencorlett
 	</p>
 </div>

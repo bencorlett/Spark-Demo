@@ -188,6 +188,10 @@ class MyFilter extends \Grid_Column_Filter_Text {
 	</p>
 	<h2>And finally... The grid</h2>
 	<?=$grid?>
+	<h2>The source</h2>
+	<p>
+		<?=\Html::anchor('https://github.com/bencorlett/Spark', 'https://github.com/bencorlett/Spark')?> to download spark, or <?=\Html::anchor('https://github.com/bencorlett/Spark-Demo', 'https://github.com/bencorlett/Spark-Demo')?> to download the entire source code to this website.
+	</p>
 	<h4>Any questions? Improvements? Bugs? Pull requests? Want to say hi?</h4>
 	<p style="text-align: center;">
 		I'd love to hear from you. Really

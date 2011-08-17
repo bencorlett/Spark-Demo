@@ -129,40 +129,40 @@ class MyFilter extends \Grid_Column_Filter_Text {
 		Once again, we've been given an object, and we want to manipulate the user's value back to a real value (or the value that will be queried against our database). And once again, we've just reversed the string the user has put in and set it as the real value. We didn't override the second task a filter has - building the table cell at the top of each column. Let's have a look at another filter that does it - <code>Spark\Grid_Column_Filter_Options</code>. The method to implement to override the rendering of the table cell is <strong>render</strong>, and once again you're given the filter object:
 	</p>
 <pre>
-	/**
-	 * Render
-	 * 
-	 * Renders a filter for
-	 * a column
-	 * 
-	 * @access    public
-	 * @param     Spark\Grid_Column_Filter    Filter
-	 * @return    Spark\Grid_Column_Filter_Interface
-	 */
-	public function render(\Grid_Column_Filter $filter)
-	{
-	    // Get options
-	    $options = $filter->get_column()->get_options();
+/**
+ * Render
+ * 
+ * Renders a filter for
+ * a column
+ * 
+ * @access    public
+ * @param     Spark\Grid_Column_Filter    Filter
+ * @return    Spark\Grid_Column_Filter_Interface
+ */
+public function render(\Grid_Column_Filter $filter)
+{
+    // Get options
+    $options = $filter->get_column()->get_options();
 
-	    // Html fallback
-	    $html = '';
+    // Html fallback
+    $html = '';
 
-	    // Make sure we have an array of options
-	    if ($options->get_data())
-	    {
-	        $html = \Form::select($filter->get_column()->get_identifier(),
-                              $filter->get_user_value(),
-                              array(null => null) + $options->get_data(),
-                              array(
-                                      'class'                => 'filter',
-                              )
-	        );
-	    }
+    // Make sure we have an array of options
+    if ($options->get_data())
+    {
+        $html = \Form::select($filter->get_column()->get_identifier(),
+                             $filter->get_user_value(),
+                             array(null => null) + $options->get_data(),
+                             array(
+                                     'class'                => 'filter',
+                             )
+        );
+    }
 
-	    $filter->set_html(html_tag('div', null, $html));
+    $filter->set_html(html_tag('div', null, $html));
 
-	    return $this;
-	}
+    return $this;
+}
 </pre>
 	<p>
 		As you might see, it uses Fuel's Form class to create a fieldsset element, for which the options available correspond to the options defined by the user when defining the grid column:

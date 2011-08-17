@@ -54,7 +54,7 @@ $query = \DB::select('*')
 	<?=$db_grid?>
 	<h2 style="margin-top: 50px;">Stay tuned</h2>
 	<p>
-		Stay tuned to this page - there is so much documentation coming - this is merely a teaser of the power of the grid. Visit <?=\Html::anchor('https://github.com/bencorlett/Spark', 'https://github.com/bencorlett/Spark')?> to download spark, or <?=\Html::anchor('https://github.com/bencorlett/Spark-Demo', 'https://github.com/bencorlett/Spark-Demo')?> to download the entire source code to this website.
+		Stay tuned to this page - there is so much documentation coming - this is merely a teaser of the power of the grid. Visit <?=\Html::anchor('https://github.com/bencorlett/Spark/tree/develop', 'https://github.com/bencorlett/Spark/tree/develop')?> to download spark, or <?=\Html::anchor('https://github.com/bencorlett/Spark-Demo', 'https://github.com/bencorlett/Spark-Demo')?> to download the entire source code to this website.
 	</p>
 	<p>
 		This website is running on the development branch of Spark - it's a complete rewrite with performance and consistency in focus, but it's incomplete thus far. It currently doesn't support joining tables (the master branch does), however I will add this functionality in the coming days. There are also many more components to the Spark Fuel Package, present in the master branch, but not in the development branch.

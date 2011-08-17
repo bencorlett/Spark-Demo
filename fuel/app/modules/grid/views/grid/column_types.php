@@ -190,7 +190,7 @@ class MyFilter extends \Grid_Column_Filter_Text {
 	<?=$grid?>
 	<h2>The source</h2>
 	<p>
-		<?=\Html::anchor('https://github.com/bencorlett/Spark', 'https://github.com/bencorlett/Spark')?> to download spark, or <?=\Html::anchor('https://github.com/bencorlett/Spark-Demo', 'https://github.com/bencorlett/Spark-Demo')?> to download the entire source code to this website.
+		<?=\Html::anchor('https://github.com/bencorlett/Spark/tree/develop', 'https://github.com/bencorlett/Spark/tree/develop')?> to download spark, or <?=\Html::anchor('https://github.com/bencorlett/Spark-Demo', 'https://github.com/bencorlett/Spark-Demo')?> to download the entire source code to this website. I'd recommend downloading spark off the development branch - it's getting a complete overhaul and it won't be 100% backwards compatible (this demo is running off the development branch).
 	</p>
 	<h4>Any questions? Improvements? Bugs? Pull requests? Want to say hi?</h4>
 	<p style="text-align: center;">

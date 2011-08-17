@@ -75,4 +75,9 @@ class Controller_Grid extends \App\Controller_Template {
 		$this->get_layout()
 			 ->set_content($view);
 	}
+	
+	public function action_column_types()
+	{
+		
+	}
 }

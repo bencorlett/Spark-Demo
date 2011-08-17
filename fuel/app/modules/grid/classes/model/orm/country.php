@@ -37,5 +37,6 @@ class Model_Orm_Country extends \Orm\Model {
 		'id',
 		'code',
 		'name',
+		'enabled',
 	);
 }

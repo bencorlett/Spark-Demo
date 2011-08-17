@@ -173,6 +173,7 @@ pre {
 	background: #eeebe1;
 	border-left: 10px solid #c5c1ae;
 	padding: 20px;
+	word-wrap: break-word;
 }
 
 a, a:visited {

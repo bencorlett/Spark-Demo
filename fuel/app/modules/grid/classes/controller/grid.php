@@ -78,6 +78,31 @@ class Controller_Grid extends \App\Controller_Template {
 	
 	public function action_column_types()
 	{
+		$grid = \Grid::factory(__METHOD__, Model_Orm_Country::find())
+					 ->add_column('id', array(
+					 	'type'		=> 'number',
+						'width'		=> 50,
+						// 'header'	=> 'ID', // We don't need thte header, it defaults to the column identifier (the first param in add_column())
+					 ))
+					 ->add_column('name', array(
+					 	'header'	=> 'Override name', // Comment me out if you would like
+						'index'		=> 'name',			// I'm also assumed from the column identifier, you could remove me
+						'renderer'	=> 'Grid\\MyRenderer',
+						'filter'	=> 'Grid\\MyFilter',
+					 ))
+					 ->add_column('enabled', array(
+					 	'type'		=> 'options',
+						'options'	=> array(
+							1			=> 'Enabled',
+							0			=> 'Disabled',
+						),
+						'width'		=> '80px', // You can use px or just provide an integer
+					 ))
+					 ->set_uses_ajax(true) // Set me to false not to use ajax
+					 ->build();
 		
+		$this->get_layout()
+			 ->set_content(\View::factory('grid/column_types')
+								->set_grid($grid));
 	}
 }

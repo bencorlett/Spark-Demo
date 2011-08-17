@@ -59,7 +59,10 @@ $query = \DB::select('*')
 	<p>
 		This website is running on the development branch of Spark - it's a complete rewrite with performance and consistency in focus, but it's incomplete thus far. It currently doesn't support joining tables (the master branch does), however I will add this functionality in the coming days. There are also many more components to the Spark Fuel Package, present in the master branch, but not in the development branch.
 	</p>
-	<h4>Any questions? Improvements? Bugs? Pull requests? Want to say hi?</h4>
+	<h2>Where to now?</h2>
+	<p>
+		Getting confident? Check out <?=\Html::anchor('grid/column_types', 'Column Types')?> and how to use them to make your grid more powerful!
+	</p>
 	<h4>Any questions? Improvements? Bugs? Pull requests? Want to say hi?</h4>
 	<p style="text-align: center;">
 		I'd love to hear from you. Really

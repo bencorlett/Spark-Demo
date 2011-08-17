@@ -20,6 +20,7 @@
 namespace Grid;
 ?>
 <div class="content">
+	<?=\Html::anchor('/', '&laquo; Back to overview')?>
 	<h2>Column Types</h2>
 	<p>
 		The grid supports many column types, as seen in the code below:

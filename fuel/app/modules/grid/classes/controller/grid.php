@@ -112,6 +112,13 @@ class Controller_Grid extends \App\Controller_Template {
 	public function action_test()
 	{
 		$grid = \Grid::factory(__METHOD__, Model_Orm_Country::find())
+					 ->add_column('selected', array(
+					 	'type'		=> 'checkbox',
+						'index'		=> 'id',		// The index of the column, used as the value, defaults to the identifier if none provided
+						'name'		=> 'values[]',	// If not provided, defaults to identifier ("checkbox") + []: checkbox[]
+						'checked'	=> array(1, 4),	// An array of preselected checkboxes
+						'width'		=> 50,
+					 ))
 					 ->add_column('id', array(
 					 	'width'		=> 50,
 					 ))

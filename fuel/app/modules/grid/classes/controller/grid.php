@@ -105,4 +105,29 @@ class Controller_Grid extends \App\Controller_Template {
 			 ->set_content(\View::factory('grid/column_types')
 								->set_grid($grid));
 	}
+	
+	/**
+	 * Testing new grid features
+	 */
+	public function action_test()
+	{
+		$grid = \Grid::factory(__METHOD__, Model_Orm_Country::find())
+					 ->add_column('id', array(
+					 	'width'		=> 50,
+					 ))
+					 ->add_column('name')
+					 ->add_column('enabled', array(
+					 	'type'		=> 'options',
+						'options'	=> array(
+							1			=> 'Enabled',
+							0			=> 'Disabled',
+						),
+					 ))
+					 ->set_row_action('grid/view/{id}')
+					 ->build();
+		
+		$this->get_layout()
+			 ->set_content(\View::factory('grid/test')
+								->set_grid($grid));
+	}
 }

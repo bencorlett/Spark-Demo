@@ -107,20 +107,23 @@ class Controller_Grid extends \App\Controller_Template {
 	}
 	
 	/**
-	 * Testing new grid features
+	 * Checkbox column type
 	 */
-	public function action_test()
+	public function action_checkbox()
 	{
-		$grid = \Grid::factory(__METHOD__, Model_Orm_Country::find())
+		$grid = \Grid::factory(__METHOD__, /*Model_Orm_Country::find()*/\DB::select('*')->from('countries'))
 					 ->add_column('selected', array(
 					 	'type'		=> 'checkbox',
 						'index'		=> 'id',		// The index of the column, used as the value, defaults to the identifier if none provided
 						'name'		=> 'values[]',	// If not provided, defaults to identifier ("checkbox") + []: checkbox[]
 						'checked'	=> array(1, 4),	// An array of preselected checkboxes
 						'width'		=> 50,
+						'align'		=> 'center',
 					 ))
 					 ->add_column('id', array(
 					 	'width'		=> 50,
+						'type'		=> 'number',
+						'align'		=> 'right',
 					 ))
 					 ->add_column('name')
 					 ->add_column('enabled', array(
@@ -129,12 +132,51 @@ class Controller_Grid extends \App\Controller_Template {
 							1			=> 'Enabled',
 							0			=> 'Disabled',
 						),
+						'align'		=> 'center',
+						'action'	=> 'rofl/method/{id}',
 					 ))
 					 ->set_row_action('grid/view/{id}')
 					 ->build();
 		
 		$this->get_layout()
-			 ->set_content(\View::factory('grid/test')
+			 ->set_content(\View::factory('grid/checkbox')
+								->set_grid($grid));
+	}
+	
+	public function action_action()
+	{
+		$grid = \Grid::factory(__METHOD__, /*Model_Orm_Country::find()*/\DB::select('*')->from('countries'))
+					 ->add_column('id', array(
+					 	'width'		=> 50,
+						'type'		=> 'number',
+						'align'		=> 'right',
+					 ))
+					 ->add_column('name', array(
+					 ))
+					 ->add_column('enabled', array(
+					 	'type'		=> 'options',
+						'options'	=> array(
+							1			=> 'Enabled',
+							0			=> 'Disabled',
+						),
+						'align'		=> 'center',
+						'action'	=> 'rofl/method/{id}',
+					 ))
+					 ->add_column('actions', array(
+						'index'		=> 'id',
+					 	'type'		=> 'action',
+						'actions'	=> array(
+							'somecontroller/method/{id}'			=> 'First',
+							'anothercontroller/anothermethod/{id}'	=> 'Second',
+						),
+						'align'		=> 'center',
+						'width'		=> 80,
+					 ))
+					 ->set_row_action('grid/view/{id}')
+					 ->build();
+		
+		$this->get_layout()
+			 ->set_content(\View::factory('grid/checkbox')
 								->set_grid($grid));
 	}
 }

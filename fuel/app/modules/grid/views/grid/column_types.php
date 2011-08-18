@@ -176,6 +176,7 @@ public function render(\Grid_Column_Filter $filter)
 	<p>
 		It also sets the selected option to the user value (the value selected by the user in the column - which will always be one of the options of the filter). Take a look at the rest of <code>Spark\Grid_Column_Filter_Options</code> and <code>Spark\Grid_Column_Renderer_Options</code> to see how they work. The amount of column types right now are limited, but I intend on implementing the following options over the next few days:
 		<ul style="padding-left: 40px;">
+			<li style="text-decoration: line-through;">Action</li>
 			<li>Checkbox</li>
 			<li>Date</li>
 			<li>Datetime</li>
@@ -183,7 +184,7 @@ public function render(\Grid_Column_Filter $filter)
 			<li style="text-decoration: line-through;">Options</li>
 			<li>Price</li>
 			<li>Radio</li>
-			<li>Select</li>
+			<li style="text-decoration: line-through;">Select</li>
 		</ul>
 	</p>
 	<h2>And finally... The grid</h2>

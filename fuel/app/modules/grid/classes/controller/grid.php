@@ -179,4 +179,33 @@ class Controller_Grid extends \App\Controller_Template {
 			 ->set_content(\View::factory('grid/checkbox')
 								->set_grid($grid));
 	}
+	
+	public function action_massaction()
+	{
+		$grid = \Grid::factory(__METHOD__, Model_Orm_Country::find())
+					 ->add_column('id', array(
+				   		'type'		=> 'number',
+						'width'		=> 50,
+					 ))
+					 ->add_column('name')
+					 ->add_column('enabled', array(
+				   		'type'		=> 'options',
+						'options'	=> array(
+							1			=> 'Enabled',
+							0			=> 'Disabled',
+						),
+						'width'		=> 80,
+					 ))
+					 ->add_massaction('delete', array(
+					 	'label'		=> 'Delete Countries',
+						'name'		=> 'contries[]',  // Also not needed, but will default to the index pluralised plus []: ids[]
+						'action'	=> 'grid/mass_delete',
+					 ))
+					 // ->set_massactions_index('id') // If not provided will default to the primary key (if the driver can access that, otherwise will default to id). Yes all massactions require the same index. Just the way the universe works
+					 ->build();
+		
+		$this->get_layout()
+			 ->set_content(\View::factory('grid/massaction')
+								->set_grid($grid));
+	}
 }

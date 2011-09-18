@@ -19,6 +19,10 @@
 
 /* === Core ================= */
 
+div.grid {
+	position: relative;
+}
+
 div.grid > table {
 	width: 100%;
 	border-spacing: 0;
@@ -68,6 +72,16 @@ div.grid > table.grid > thead > tr.headers > th {
 	color: #f8f7f3;
 }
 
+div.grid > table.grid > thead > tr.headers > th.sort {
+	background-image: url(../img/sort.png);
+	background-position: 10px 11px;
+	background-repeat: no-repeat;
+}
+
+div.grid > table.grid > thead > tr.headers > th.sort.desc {
+	background-position: 10px -49px;
+}
+
 div.grid > table.grid > thead > tr.headers > th > span {
 	cursor: pointer;
 }
@@ -89,25 +103,25 @@ div.grid > table.grid > thead > tr.filters > th {
 }
 
 /* Ranges */
-div.grid > table.grid > thead > tr.filters > th > div.range > div.line {
+div.grid > table.grid > thead div.range > div.line {
 	width: 100px;
 }
 
-div.grid > table.grid > thead > tr.filters > th > div.range > div.line.min {
+div.grid > table.grid > thead div.range > div.line.min {
 	margin-bottom: 4px;
 }
 
-div.grid > table.grid > thead > tr.filters > th > div.range > div.line > label,
-div.grid > table.grid > thead > tr.filters > th > div.range > div.line > input {
+div.grid > table.grid > thead div.range > div.line > label,
+div.grid > table.grid > thead div.range > div.line > input {
 	float: left;
 	text-align: left;
 }
 
-div.grid > table.grid > thead > tr.filters > th > div.range > div.line > label {
+div.grid > table.grid > thead div.range > div.line > label {
 	width: 40px;
 }
 
-div.grid > table.grid > thead > tr.filters > th > div.range > div.line > input {
+div.grid > table.grid > thead div.range > div.line > input {
 	width: 50px !important;
 }
 
@@ -141,10 +155,38 @@ div.grid > table.grid > tbody > tr:hover > td {
 
 
 
-/* === Clears ============== */
+/* === Overlay ============== */
 
-div.grid > table.grid > thead > tr.filters > th > div.range:after,
-div.grid > table.grid > thead > tr.filters > th > div.range > div.line:after {
+div.grid > div.overlay {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(255, 255, 255, 0.5);
+}
+
+div.grid > div.overlay div.loading {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -30px 0 0 -65px;
+	height: 61px;
+	width: 130px;
+	padding: 5px 70px 5px 0;
+	background: url(../img/loading.gif) 100% 50% no-repeat;
+}
+
+/* =/= Overlay ============== */
+
+
+
+
+/* === Clears =============== */
+
+div.grid > table.grid > thead div.range:after,
+div.grid > table.grid > thead div.range > div.line:after {
 	display: block;
 	content: ".";
 	clear: both;
@@ -154,4 +196,4 @@ div.grid > table.grid > thead > tr.filters > th > div.range > div.line:after {
 	overflow: hidden;
 }
 
-/* =/= Clears ============== */
+/* =/= Clears =============== */

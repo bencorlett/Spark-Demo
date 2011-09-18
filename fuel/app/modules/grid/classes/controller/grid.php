@@ -99,6 +99,7 @@ class Controller_Grid extends \App\Controller_Template {
 						'width'		=> '80px', // You can use px or just provide an integer
 					 ))
 					 ->set_uses_ajax(true) // Set me to false not to use ajax
+					 ->set_default_sort('name', 'asc')
 					 ->build();
 		
 		$this->get_layout()
